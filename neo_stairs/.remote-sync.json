@@ -1,0 +1,15 @@
+{
+  "uploadOnSave": true,
+  "useAtomicWrites": false,
+  "deleteLocal": false,
+  "hostname": "192.168.1.187",
+  "ignore": [
+    ".remote-sync.json",
+    ".git/**"
+  ],
+  "username": "pi",
+  "keyfile": "C:/cygwin64/home/Craig/.ssh/id_rsa",
+  "watch": [],
+  "transport": "scp",
+  "target": "/home/pi/src/github/raspberry_pi/neo_stairs"
+}
