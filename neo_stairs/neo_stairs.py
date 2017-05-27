@@ -4,15 +4,15 @@ import time
 from neopixel import *
 
 # LED strip configuration:
-LED_COUNT      = 5      # Number of LED pixels.
+LED_COUNT      = 150     # Number of LED pixels.
 LED_PIN        = 18      # GPIO pin connected to the pixels (must support PWM!).
 LED_FREQ_HZ    = 800000  # LED signal frequency in hertz (usually 800khz)
 LED_DMA        = 5       # DMA channel to use for generating signal (try 5)
 LED_BRIGHTNESS = 255     # Set to 0 for darkest and 255 for brightest
 LED_INVERT     = False   # True to invert the signal (when using NPN transistor level shift)
 
-LIT_COUNT = 2
-last = [0,0];
+LIT_COUNT = 10
+last = [0,0,0,0,0,0,0,0,0,0];
 def twinkle():
     for i in range(0,LIT_COUNT):
         strip.setPixelColor(last[i], get_color(0, 0, 0));
@@ -52,5 +52,5 @@ if __name__ == '__main__':
 
     print "Control-C to Exit"
     while True:
-        # walk()
-        twinkle()
+        walk()
+        #twinkle()
