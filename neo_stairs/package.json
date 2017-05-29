@@ -1,0 +1,14 @@
+{
+  "name": "neo_stairs",
+  "version": "1.0.0",
+  "description": "Project to control a 5m NeoPixel strip on the banister of my stairs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ccaroon",
+  "license": "ISC",
+  "dependencies": {
+    "blynk-library": "^0.4.7"
+  }
+}
