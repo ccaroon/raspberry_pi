@@ -1,5 +1,5 @@
 # NeoStairs
-Project to control a 15m NeoPixel strip on the banister of my stairs.
+Project to control a 5m NeoPixel strip on the banister of my stairs.
 
 ## Requires
 * Raspberry Pi. I'm using a [Pi3](https://www.sparkfun.com/products/13825)
