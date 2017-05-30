@@ -1,7 +1,7 @@
 import random
 from neopixel import Adafruit_NeoPixel
 
-from color import Color
+import color
 import util
 
 class Strip:
@@ -25,28 +25,22 @@ class Strip:
     def twinkle(self):
         while True:
             for i in range(0,self.LIT_COUNT):
-                self.__strip.setPixelColor(self.last[i], Color(0, 0, 0));
-                self.last[i] = random.randint(0, self.__strip.numPixels());
+                self.__strip.setPixelColor(self.last[i], color.Black())
+                self.last[i] = random.randint(0, self.__strip.numPixels())
 
-                r = random.randint(25, 255);
-                g = random.randint(25, 255);
-                b = random.randint(25, 255);
-                self.__strip.setPixelColor(self.last[i], Color(r, g, b));
+                self.__strip.setPixelColor(self.last[i], color.Random())
 
-            self.__strip.show();
-            util.delay(150);
+            self.__strip.show()
+            util.delay(150)
 
     def walk(self):
         while True:
-            r = random.randint(0, 255);
-            g = random.randint(0, 255);
-            b = random.randint(0, 255);
             for i in range(0, self.__strip.numPixels()):
-                self.__strip.setPixelColor(i, Color(r, g, b));
-                self.__strip.show();
-                util.delay(100.0);
+                self.__strip.setPixelColor(i, color.Random())
+                self.__strip.show()
+                util.delay(100.0)
 
-            util.delay(750.0);
+            util.delay(750.0)
 
     def set_color(self, color):
         for i in range(0, self.__strip.numPixels()):
