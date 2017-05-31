@@ -47,3 +47,11 @@ class Strip:
             self.__strip.setPixelColor(i, color)
 
         self.__strip.show();
+
+    def cylon(self):
+        red = 0
+        for i in range(0,self.__strip.numPixels()):
+            self.__strip.setPixelColor(i, color.Color(red, 0, 0))
+            red+=1
+
+        self.__strip.show();
