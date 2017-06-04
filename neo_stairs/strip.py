@@ -7,7 +7,7 @@ import util
 class Strip:
 
     # LED strip configuration:
-    LED_COUNT      = 150     # Number of LED pixels.
+    LED_COUNT      = 150-26  # Number of LED pixels.
     LED_PIN        = 18      # GPIO pin connected to the pixels (must support PWM!).
     LED_FREQ_HZ    = 800000  # LED signal frequency in hertz (usually 800khz)
     LED_DMA        = 5       # DMA channel to use for generating signal (try 5)
@@ -22,21 +22,22 @@ class Strip:
 
     LIT_COUNT = 10
     last = [0] * LIT_COUNT
-    def twinkle(self):
+    def twinkle(self, clr=color.Random()):
         while True:
             for i in range(0,self.LIT_COUNT):
                 self.__strip.setPixelColor(self.last[i], color.Black())
                 self.last[i] = random.randint(0, self.__strip.numPixels())
 
-                self.__strip.setPixelColor(self.last[i], color.Random())
+                self.__strip.setPixelColor(self.last[i], clr)
 
             self.__strip.show()
             util.delay(150)
 
     def walk(self):
         while True:
+            clr = color.Random()
             for i in range(0, self.__strip.numPixels()):
-                self.__strip.setPixelColor(i, color.Random())
+                self.__strip.setPixelColor(i, clr)
                 self.__strip.show()
                 util.delay(100.0)
 
@@ -55,3 +56,6 @@ class Strip:
             red+=1
 
         self.__strip.show();
+
+    def rain(self):
+       pass 
