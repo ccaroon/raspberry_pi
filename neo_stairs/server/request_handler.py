@@ -3,12 +3,12 @@ import BaseHTTPServer
 
 import server
 
+# Inherit from "object" so that I can use super() in __init__
 class RequestHandler(BaseHTTPServer.BaseHTTPRequestHandler, object):
 
     def __init__(self, request, client_address, svr):
         self.__action_handler = server.ActionHandler()
         super(RequestHandler, self).__init__(request, client_address, svr)
-        # BaseHTTPServer.BaseHTTPRequestHandler.__init__(self, request, client_address, svr)
 
     def do_GET(self):
         url = urlparse.urlparse(self.path)
