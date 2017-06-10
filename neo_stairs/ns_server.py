@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+import BaseHTTPServer
 import server
 
 if __name__ == '__main__':

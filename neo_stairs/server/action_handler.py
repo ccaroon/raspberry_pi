@@ -3,12 +3,12 @@ import neo_strip
 
 class ActionHandler:
 
-    def __init__():
+    def __init__(self):
         # Create NeoPixelStrip
         # strip = neo_strip.NeoPixelStrip()
-        pass
+        print("ActionHandler init")
 
-    def handle(path, query_string):
+    def handle(self, path, query_string):
         success = True
 
         if path == "/set_color":
@@ -19,5 +19,5 @@ class ActionHandler:
 
         return(success)
 
-    def set_color(red, green, blue):
-        print("ActionHandler#set_color: (%s|%s|%s)" % (r,g,b))
+    def set_color(self, red, green, blue):
+        print("ActionHandler#set_color: (%s|%s|%s)" % (red,green,blue))
