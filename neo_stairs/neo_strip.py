@@ -4,7 +4,7 @@ from neopixel import Adafruit_NeoPixel
 import color
 import util
 
-class Strip:
+class NeoPixelStrip:
 
     # LED strip configuration:
     LED_COUNT      = 150     # Number of LED pixels.
