@@ -1,0 +1,1 @@
+sudo omxplayer $1
