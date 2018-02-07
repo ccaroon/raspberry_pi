@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import sys
+import time
 from phue import Bridge
 
 LIGHT = 'Computer Room Lamp'
@@ -26,6 +27,11 @@ elif cmd == 'reading':
     b.set_light(READING, 'sat', 255)
 elif cmd == 'computer':
     b.set_light(LIGHT, 'on', True)
-    b.set_light(LIGHT, 'bri', 255)
+    while True:
+        b.set_light(LIGHT, 'bri', 255)
+        time.sleep(2)
+        b.set_light(LIGHT, 'bri', 128)
+        time.sleep(2)
+
 else:
     print("Unknown commmand [%s]" % (cmd))
